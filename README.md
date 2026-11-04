@@ -28,8 +28,10 @@ Corollary on the sister sequence
 [OEIS A082217](https://oeis.org/A082217) ("smallest palindrome
 beginning with `n` and digit sum `n`, or `0` if none exists"):
 `a082217(n) = 0` **iff** `n = 19`, and `a082217(n) = a082935(n)`
-otherwise — the "only zero" comment on that entry was asserted
-without proof.
+otherwise — as the comment on that entry already indicated
+through the key inequality ("every other integer `k > 9` has
+digit sum `≤ k/2`, so the center can always be filled in"),
+which settles the existence informally.
 
 ## Theorems
 
@@ -78,10 +80,13 @@ middle (`isPalDigitString`).
 
 The conjecture was stated by Robert G. Wilson v (2003) in the
 comments of OEIS A082935 and checked by him to `n = 100`; the
-A082217 "only zero" remark was likewise asserted without proof.
-To our knowledge this repository provides the **first written
-proof** and the **first formalization** — the statements
-themselves are not claimed as new. The formalization of the raw
+A082217 comment already records the existence argument
+(digit sum `≤ k/2` for `k > 9`, `k ≠ 19`), which settles the
+existence informally. To our knowledge this repository provides
+the **first complete written proof** — exact formula and
+minimality across stages included — and the **first
+formalization**; the conjectured phenomenon itself is not
+claimed as new. The formalization of the raw
 OEIS text was audited blindly by an independent oracle (verbatim
 exchange archived in the package under `VERIFICATIONS/`).
 
