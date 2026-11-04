@@ -15,11 +15,14 @@ with the **exact formula** (`σ` = decimal digit sum):
 - `a(n) = n` for `n ≤ 9`;
 - `a(19) = 1949999999999999999999491` — `"194"` + nineteen `9`s +
   `"491"`, with `σ = 199` then `σ² = 19`;
-- for `n ≥ 10`, `n ≠ 19` (one proves `n - 2σ(n) > 0`):
+- for `n ≥ 10`, `n ≠ 19` (one proves `n - 2σ(n) ≥ 0`, with equality
+  exactly at `n = 18`):
   `a(n) = concat(n, μ(n - 2σ(n)), rev(n))`, where `μ(t)` is the
-  numerically smallest palindromic digit-string with digit sum `t`
-  (the `A062388(t)` pattern — leading digit, block of nines,
-  symmetric tail).
+  shortest palindromic digit-string with digit sum `t` — the empty
+  string at `t = 0` — lexicographically smallest among strings of
+  that length (the `A062388`-style pattern: leading digit, block of
+  nines, symmetric tail). `concat`/`rev` act on decimal digit
+  strings, re-evaluated as an integer.
 
 Corollary on the sister sequence
 [OEIS A082217](https://oeis.org/A082217) ("smallest palindrome
