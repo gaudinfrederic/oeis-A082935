@@ -82,11 +82,13 @@ The conjecture is recorded on OEIS A082935 (unsigned %C line,
 2003) and was checked by Robert G. Wilson v to `n = 100`; the
 A082217 comment already records the existence argument
 (digit sum `≤ k/2` for `k > 9`, `k ≠ 19`), which settles the
-existence informally. To our knowledge this repository provides
-the **first complete written proof** — exact formula and
-minimality across stages included — and the **first
-formalization**; the conjectured phenomenon itself is not
-claimed as new. The formalization of the raw
+existence informally. This repository provides a complete
+written proof — exact formula and minimality across stages
+included — and, to our knowledge as of 2026-11-04, the **first
+machine-checked formalization** (search corpus: OEIS entry,
+formal-conjectures, trureturing, AlphaProof/sequencelib
+registries, global code search); the conjectured phenomenon
+itself is not claimed as new. The formalization of the raw
 OEIS text was audited blindly by an independent oracle (verbatim
 exchange archived in the package under `VERIFICATIONS/`).
 
