@@ -1,4 +1,4 @@
-# A082935 — Wilson's first-round digit-sum conjecture, proved in Lean 4
+# A082935 — first-round digit-sum conjecture, proved in Lean 4
 
 [![CI](https://github.com/gaudinfrederic/oeis-A082935/actions/workflows/ci.yml/badge.svg)](https://github.com/gaudinfrederic/oeis-A082935/actions/workflows/ci.yml)
 
@@ -6,8 +6,8 @@ Machine-checked proof of the conjecture on
 [OEIS A082935](https://oeis.org/A082935) (Meenakshi Srikanth, 2003):
 `a(n)` = smallest palindrome whose decimal expansion begins with `n`
 and whose iterated digit sum reaches `n` at some stage `k ≥ 1`.
-The OEIS records the conjecture (Robert G. Wilson v, Jun 27 2003,
-checked to `n = 100`): **except for `n = 19`, the first-round digit
+The OEIS records the conjecture (unsigned %C line;
+checked to `n = 100` by Robert G. Wilson v, Jun 27 2003): **except for `n = 19`, the first-round digit
 sum itself is `n`; for `n = 19` the first-round sum is `199` and the
 second-round sum is `19`** — proved here for every `n ≥ 1`, together
 with the **exact formula** (`σ` = decimal digit sum):
@@ -36,7 +36,7 @@ which settles the existence informally.
 ## Theorems
 
 ```lean
-theorem A082935_wilson_conjecture :
+theorem A082935_first_round :
     (∀ n : ℕ, 1 ≤ n → n ≠ 19 → sigma10 (a082935 n) = n) ∧
     sigma10 (a082935 19) = 199 ∧
     sigma10^[2] (a082935 19) = 19
@@ -78,8 +78,8 @@ middle (`isPalDigitString`).
 
 ## Honesty note
 
-The conjecture was stated by Robert G. Wilson v (2003) in the
-comments of OEIS A082935 and checked by him to `n = 100`; the
+The conjecture is recorded on OEIS A082935 (unsigned %C line,
+2003) and was checked by Robert G. Wilson v to `n = 100`; the
 A082217 comment already records the existence argument
 (digit sum `≤ k/2` for `k > 9`, `k ≠ 19`), which settles the
 existence informally. To our knowledge this repository provides

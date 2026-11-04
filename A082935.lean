@@ -15,7 +15,7 @@ Main results:
   with `t = n − 2·σ₁₀ n`, `lmin t` = minimal length of a palindromic
   digit-string of sum `t` and `gmid` = the `Nat.ofDigits`-smallest such string.
 * `a082935_19` : `a082935 19 = 1949999999999999999999491` (kernel-certified).
-* `A082935_formula`, `A082935_wilson_conjecture`, `A082217_characterization`.
+* `A082935_formula`, `A082935_first_round`, `A082217_characterization`.
 -/
 
 noncomputable section
@@ -1338,9 +1338,9 @@ theorem A082935_formula :
     simp only []
     exact a082935_eq_w h10 h19
 
-/-- Robert G. Wilson's conjecture (OEIS %C line), including the `n = 19`
+/-- Conjecture recorded on the OEIS A082935 entry (unsigned %C line; checked to n = 100 by R. G. Wilson v), including the `n = 19`
 exception where the first-round digit sum is `199` and the second is `19`. -/
-theorem A082935_wilson_conjecture :
+theorem A082935_first_round :
     (∀ n : ℕ, 1 ≤ n → n ≠ 19 → sigma10 (a082935 n) = n) ∧
     sigma10 (a082935 19) = 199 ∧
     sigma10^[2] (a082935 19) = 19 := by
@@ -1367,5 +1367,5 @@ end
 #print axioms a082935_eq_w
 #print axioms a082935_19
 #print axioms A082935_formula
-#print axioms A082935_wilson_conjecture
+#print axioms A082935_first_round
 #print axioms A082217_characterization
