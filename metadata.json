@@ -1,10 +1,11 @@
 {
- "title": "A082935 - first-round digit-sum conjecture + exact formula (Lean 4 proof)",
- "description": "theorem A082935_first_round: for every n >= 1, n != 19, the first-round digit sum of a082935 n equals n; for n = 19 the first-round sum is 199 and the second-round sum is 19. Proves the conjecture recorded on the OEIS A082935 entry (checked to n = 100 by Robert G. Wilson v) via the exact formula (theorem A082935_formula): a(n) = n for n <= 9; a(19) = 1949999999999999999999491; for n >= 10, n != 19, a(n) = concat(n, mu(n - 2*sigma(n)), rev(n)) where mu(t) is the Nat.ofDigits-smallest palindromic digit-string of digit sum t. Corollary A082217_characterization: a082217 n = 0 iff n = 19, and a082217 n = a082935 n otherwise - the 'only zero' comment on A082217 was asserted without proof. Lean 4 + mathlib v4.35.0, kernel-pure: zero sorry, zero native_decide, axioms = [propext, Classical.choice, Quot.sound] on all five top theorems. Blind oracle transcription audit archived in VERIFICATIONS/. Direction check only: exact formula reproduces the Irvine b-file on all 175 terms. Anteriority audit corpus and date: OEIS entry, leanprover-community/formal-conjectures, the-omega-institute/trureturing, AlphaProof/sequencelib registries, global code search - audited 2026-11-04. Record-level Apache-2.0 applies to original material only; OEIS verbatim content and %N/%C quotations are redistributed under CC-BY-SA-4.0 (see NOTICE.txt).",
+ "title": "Palindromes beginning with n whose iterated digit sum reaches n, and the first-round conjecture on OEIS A082935",
+ "description": "theorem A082935_first_round: for every n >= 1, n != 19, the first-round digit sum of a082935 n equals n; for n = 19 the first-round sum is 199 and the second-round sum is 19. Proves the conjecture recorded on the OEIS A082935 entry (checked to n = 100 by Robert G. Wilson v; the existence follows informally from the inequality recorded on sister entry A082217) via the exact formula (theorem A082935_formula): a(n) = n for n <= 9; a(19) = 1949999999999999999999491; for n >= 10, n != 19, a(n) = concat(n, mu(n - 2*sigma(n)), rev(n)) where mu(t) is the lexicographically smallest palindromic digit string of digit sum t and minimal length (the empty string at t = 0). Corollary A082217_characterization: a082217 n = 0 iff n = 19, and a082217 n = a082935 n otherwise - the 'only zero' comment on A082217 already records the existence argument (digit sum <= k/2 for k > 9, k != 19). Lean 4 + mathlib v4.35.0, kernel-pure: zero sorry, zero native_decide, axioms = [propext, Classical.choice, Quot.sound] on all five top theorems. The exact formula was checked against all 175 terms of Irvine's table attached to the entry (zero deviations). Record-level Apache-2.0 applies to original material only; OEIS verbatim content and %N/%C quotations are redistributed under CC-BY-SA-4.0 (see NOTICE.txt).",
  "upload_type": "software",
  "creators": [
   {
-   "name": "Gaudin, Frederic"
+   "name": "Gaudin, Frédéric",
+   "affiliation": "University of Caen Normandy"
   }
  ],
  "license": {
@@ -25,7 +26,7 @@
   "conjecture",
   "exact formula"
  ],
- "version": "v6",
+ "version": "1.1.0",
  "related_identifiers": [
   {
    "identifier": "https://github.com/gaudinfrederic/oeis-A082935",
@@ -62,5 +63,6 @@
   "code:theoremStatus": "theorem-unconditional",
   "code:leanToolchain": "leanprover/lean4:v4.35.0",
   "code:mathlibVersion": "v4.35.0"
- }
+ },
+ "publication_date": "2026-11-14"
 }

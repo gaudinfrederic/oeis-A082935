@@ -18,11 +18,10 @@ with the **exact formula** (`σ` = decimal digit sum):
 - for `n ≥ 10`, `n ≠ 19` (one proves `n - 2σ(n) ≥ 0`, with equality
  exactly at `n = 18`):
  `a(n) = concat(n, μ(n - 2σ(n)), rev(n))`, where `μ(t)` is the
- shortest palindromic digit-string with digit sum `t` - the empty
- string at `t = 0` - lexicographically smallest among strings of
- that length (the `A062388`-style pattern: leading digit, block of
- nines, symmetric tail). `concat`/`rev` act on decimal digit
- strings, re-evaluated as an integer.
+ lexicographically smallest palindromic digit string of digit
+ sum `t` and minimal length (the empty string at `t = 0`).
+ `concat`/`rev` act on decimal digit strings, re-evaluated as
+ an integer.
 
 Corollary on the sister sequence
 [OEIS A082217](https://oeis.org/A082217) ("smallest palindrome
@@ -89,8 +88,8 @@ included - and a machine-checked formalization in Lean 4
 formal-conjectures, trureturing, AlphaProof/sequencelib
 registries, global code search); the conjectured phenomenon
 itself is not claimed as new. The formalization of the raw
-OEIS text was audited blindly by an independent oracle (verbatim
-exchange archived in the package under `VERIFICATIONS/`).
+OEIS text was re-derived in an independent external review
+working from the raw OEIS text alone.
 
 ## Reproduce
 
@@ -106,4 +105,4 @@ https://doi.org/10.5281/zenodo.23956086
 
 Sibling: *Prescribed digit sums in residue classes and a
 conjecture of Murthy (OEIS A077754)*, F. Gaudin -
-https://doi.org/10.5281/zenodo.23879088
+https://doi.org/10.5281/zenodo.23879087
